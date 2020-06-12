@@ -1,1 +1,37 @@
-<p>todo works!</p>
+
+<div class="input-group" style="margin-top: 50px" >
+  <input type ="text"
+         class="form-control"
+         autofocus
+         name="title"
+         placeholder="What is your task?"
+         style="background-color: #222; color: #fff"
+         required
+         type="text"
+         #itemTitle
+         (keyup.enter)="onAdd(itemTitle)"
+  >
+  <div class="input-group-addon hover-cursor" (click)="onAdd(itemTitle)"
+  style="background-color: #222222; color:#999">
+    <i class="fa fa-plus-circle fa-2x"></i>
+  </div>
+</div>
+
+
+<div style = "margin:10px 0px;">
+  <ul class="list-group" >
+    <li class="list-group-item" *ngFor="let item of toDoListArray" style="background-color: #222222; color: whitesmoke; border-top-color: #999">
+      <span class="hover-cursor" [class.text-success]= "item.isChecked" (click)="alterState(item.$key, item.isChecked)">
+        <i class="fa fa-lg" [ngClass]= "item.isChecked? 'fa-check-circle-o' : 'fa-circle-thin'">
+        </i>
+      </span>
+      <em>
+      {{item.title}}
+      </em>
+      <span class="hover-cursor pull-right" style="color: #999" (click)="onDelete(item.$key)">
+        <i class="fa fa-trash-o fa-lg">
+        </i>
+      </span>
+    </li>
+  </ul>
+</div>

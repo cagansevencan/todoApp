@@ -117,8 +117,13 @@
               "devServerTarget": "todoApp:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "todoApp"
 }

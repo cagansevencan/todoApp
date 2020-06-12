@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.hover-cursor{
+  cursor: pointer;
+}
+
+::selection{
+  background: rgba(200, 200, 255, .1);
+}
+
+html {font-color: #999}
+html {font-family: 'aktiv-grotesk-std', Helvetica Neue, Arial, sans-serif }
